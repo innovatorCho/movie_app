@@ -1,11 +1,16 @@
 import React from "react";
-import Apple from "./Apple";
+
+function Fluit(props) {
+  return <h1>{props.name} is {props.val}</h1>;
+}
 
 function App() {
   return (
     <div className="App">
       <h1>Hello!!</h1>
-      <Apple />
+      <Fluit name="Apple" val="사과" />
+      <Fluit name="calot" val="당근" />
+      <Fluit name="pear" val="배" />
     </div>
   );
 }
