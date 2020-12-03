@@ -1,22 +1,26 @@
 import React from "react";
 
-function Fluit(props) {
-  return <h1>{props.name} is {props.val}</h1>;
-}
+class App extends React.Component {
+  state = {
+    count : 0
+  }
 
-const fluitList = [
-  {name : "apple",korname : "사과"}
-  ,{name : "calot",korname : "당근"}
-  ,{name : "pear",korname : "배"}
-  ,{name : "orange",korname : "오렌지"}
-];
+  add = () => {
+    console.log("add");
+  }
+  minus = () => {
+    console.log("minus");
+  }
 
-function App() {
-  return (
-    <div className="App">
-      {fluitList.map(fluit => (<Fluit name={fluit.name} val={fluit.korname}/>))}
-    </div>
-  );
+  render(){
+    return (
+      <div>
+        <h1> This number is {this.state.count}</h1>
+        <button onClick={this.add}>add</button>
+        <button onClick={this.minus}>minus</button>
+      </div>
+    );
+  }
 }
 
 export default App;
