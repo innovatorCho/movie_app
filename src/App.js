@@ -19,17 +19,19 @@ class App extends React.Component {
     const { movies } = this.state;
     console.log(movies);
     return (
-      movies.map(movies => (
-        <Movie 
-          key={movies.id}
-          id={movies.id} 
-          year={movies.year}
-          summary={movies.summary}
-          title={movies.title}
-          poster={movies.medium_cover_image}
-          genres={movies.genres}
-          />
-        ))
+      <div className="movies">
+        {movies.map(movie => (
+          <Movie 
+            key={movie.id}
+            id={movie.id} 
+            year={movie.year}
+            summary={movie.summary}
+            title={movie.title}
+            poster={movie.medium_cover_image}
+            genres={movie.genres}
+            />
+          ))}
+        </div>
     );
   }
 
